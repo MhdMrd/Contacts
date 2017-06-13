@@ -1,0 +1,88 @@
+{% extends 'main_template.html' %}
+
+{% block title %}Ajout d'un contact {% endblock %}
+{% block statut %}{{profil_u.statut}}{% endblock %}
+{% block content %}
+{% load staticfiles %}
+
+<div class="container" id="container">
+    <div class="row">
+        <div class="card-panel col s6 offset-s3 login" id="box">
+            <i class="fa fa-user-plus fa-4x" id="icone_en_tete"></i>
+            <form method="POST" action="" class="text center" enctype="multipart/form-data">{% csrf_token %}
+                <div class="row" id="inputs">
+                <div class="input-field">
+                <i class="fa fa-user-circle prefix"></i>
+
+                <label for="{{form.pseudo.auto_id}}">Pseudo</label>
+                    <input id="{{form.pseudo.auto_id}}" name="pseudo" type="text" class="validate" required/>
+                </div>
+                </div>
+
+                <div class="row" id="inputs">
+                <div class="input-field">
+                <i class="fa fa-pencil prefix"></i>
+
+                <label for="{{form.nom.auto_id}}">Nom</label>
+                    <input id="{{form.nom.auto_id}}" type="text" class="validate" name="nom" required/>
+                </div>
+                </div>
+
+                <div class="row" id="inputs">
+                <div class="input-field">
+                <i class="fa fa-pencil prefix"></i>
+
+                <label for="{{form.prenom.auto_id}}">Prénom</label>
+                    <input id="{{form.prenom.auto_id}}" type="text" class="validate" name="prenom" required/>
+                </div>
+                </div>
+
+                <div class="row" id="inputs">
+                <div class="input-field">
+                <i class="fa fa-phone prefix"></i>
+
+                <label for="{{form.numero.auto_id}}">Numéro</label>
+                    <input id="{{form.numero.auto_id}}" type=tel class="validate" name="numero" required/>
+                </div>
+                </div>
+
+                <div class="row" id="inputs">
+                <div class="input-field">
+                <i class="fa fa-at prefix"></i>
+
+                <label for="{{form.email.auto_id}}">Email</label>
+                    <input id="{{form.email.auto_id}}" type="email" class="validate" name="email" required/>
+                </div>
+                </div>
+
+                <div class="row" id="inputs">
+                    <div class="file-field input-field">
+
+      <div class="btn-flat waves-effect waves-teal left" style="background-color:#b2ebf2 ; color:black">
+        <span><i class="fa fa-camera"></i></span>
+        <input type="file" id="{{form.photo.auto_id}}" name="{{form.photo.name}}" required/>
+      </div>
+                        <input style="width:79%" class="file-path validate" type="text" accept="image/*"/>
+    </div>
+                </div>
+
+                <div class="row" id="ajouter">
+                    <button  type="submit" class="btn-flat">
+                        <a href="">
+                            <i  class="fa fa-angle-right right"></i>Ajouter
+                        </a>
+
+                    </button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+{% endblock %}

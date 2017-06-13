@@ -1,0 +1,47 @@
+{% extends 'main_template.html' %}
+{% load staticfiles %}
+{% block title %}Liste des contacts{% endblock %}
+{% block username %}{{utilisateur.username}}{% endblock %}
+{% block pp %}<img id="img_avatar" src="/static/images/Photos de profils/{{ppf}}" class="materialboxed circle" />{% endblock %}
+{% block statut %}{{profil_u.statut}}{% endblock %}
+{% block content %}
+        <center>
+            <!--<ul class="collection table_liste">
+                {% for contact in contacts %}
+                <li class="collection-item avatar hoverable">
+                    <img src="/{{contact.photo}}" alt="" class="circle materialboxed">
+                    <span class="title">{{contact.pseudo}}</span>
+                    <p>{{contact.numero}}
+                        <br>{{contact.email}}
+                    </p>
+                    <a href="#!" class="secondary-content"><i class="fa fa-user"></i></a>
+                </li>
+                {% endfor %}
+            </ul>-->
+        <table class="centered table_liste">
+            <thead class="head">
+            <tr>
+            <th data-field="pseudo">Pseudo</th>
+            <th data-field="numero">Numéro</th>
+            <th data-field="prenom">Prénom</th>
+
+            </tr>
+            </thead>
+
+            <tbody class="tbody_liste">
+            {% for contact in contacts %}
+            <tr class="hoverable lignes_table_liste">
+                <td><a href="/contacts/{{contact.id}}/details" class="a_liste">{{contact.pseudo}}</a></td>
+                <td><a href="/contacts/{{contact.id}}/details" class="a_liste">{{contact.numero}}</a></td>
+                <td><a href="/contacts/{{contact.id}}/details" class="a_liste">{{contact.prenom}}</a></td>
+            </tr>
+
+            {% endfor %}
+            </tbody>
+        </table>
+</center>
+
+
+<!--<a href="#" class="btn indigo" onclick="Materialize.showStaggeredList('#liste_contacts')">Liste</a>-->
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'main_template.html' %}
+
+{% block title %}Détails du contact{% endblock %}
+{% block statut %}{{profil_u.statut}}{% endblock %}
+{% block content %}
+
+{% load staticfiles %}
+
+        <h2 class="header indigo-text">Détails du contact: {{contact.pseudo}}</h2>
+<center>
+    <table class="table_details centered responsive-table">
+
+
+
+        <tbody class="tbody_liste">
+        <tr style="margin-bottom:25px; color:green;">
+            <td><h4>Informations</h4></td>
+            <td><h4>Valeurs</h4></td>
+            <tr></tr>
+        </tr>
+        <tr></tr>
+        <tr class="hoverable" id="tr_details">
+            <td>Pseudo:</td>
+            <td>{{contact.pseudo}}</td>
+        </tr>
+        <tr class="hoverable" id="tr_details">
+            <td>Numéro:</td>
+            <td>{{contact.numero}}</td>
+        </tr>
+        <tr class="hoverable" id="tr_details">
+            <td>Nom:</td>
+            <td>{{contact.nom}}</td>
+        </tr>
+        <tr class="hoverable" id="tr_details">
+            <td>Prénom:</td>
+            <td>{{contact.prenom}}</td>
+        </tr>
+        <tr class="hoverable" id="tr_details">
+            <td>Email:</td>
+            <td>{{contact.email}}</td>
+        </tr>
+        <tr class="hoverable" id="tr_details">
+            <td>Photo:</td>
+            <td><img src="/static/images/Photos contacts/{{ppf}}" alt="" class="circle materialboxed image" id="img_avatar_details"></td>
+        </tr>
+        
+        </tbody>
+    </table>
+    <div class="row boutons">
+        <a href="#modal_confirmation" class="btn-flat btn-option modal-trigger" style="background-color:#b2ebf2;"><i class="fa fa-trash left" style="color:red"></i>Supprimer</a>
+        <a href="/contacts/{{contact.pk}}/edit/" class="btn-flat btn-option" style="background-color:#b2ebf2;"><i class="fa fa-edit left" style="color:blue"></i>Modifier</a>
+</div>
+</center>
+
+<div id="modal_confirmation" class="modal">
+<div class="modal-content">
+    <h4>Confirmez</h4>
+    <p>Etes-vous sûr de vouloir supprimer ce contact?</p>
+</div>
+    <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close btn-flat" style="background-color:#b2ebf2; margin:30px;">Non</a>
+
+        <a href="/contacts/{{contact.pk}}/delete/" class="modal-action modal-close btn-flat" onclick="Materialize.toast('Suppression en cours...', 3000)" style="background-color:#b2ebf2; margin:30px;">Oui</a>
+    </div>
+</div>
+
+{% endblock %}

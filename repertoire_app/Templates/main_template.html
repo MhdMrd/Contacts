@@ -1,0 +1,180 @@
+<html>
+      <head>
+
+      <title>{% block title %}Ma page{% endblock %}</title>
+      {% load staticfiles %}
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="{% static 'materialize/css/style.css' %}">
+          <link rel="stylesheet" type="text/css" href="{% static '/style_tests.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css' %}">
+      <link rel="stylesheet" href="{% static 'materialize/css/materialize.min.css' %}" type="text/css" media="screen,projection"/>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" charset="UTF-8"/>
+           <script src="../s3.amazonaws.com/tx-live/live.js"></script>
+      </head>
+
+      <body id="body">
+
+      <script type="text/javascript" src="{% static 'jQuery/jquery-2.2.3.min.js' %}"></script>
+
+            <script type="text/javascript" src="{% static 'materialize/js/materialize.min.js' %}"></script>
+            <script type="text/javascript" src="{% static '/scripts.js' %}"></script>
+            <script type="text/javascript" src="{% static 'blog/WOW/dist/wow.min.js' %}"></script>
+      <div class="navbar-fixed">
+          <nav>
+                  <div class="nav-wrapper indigo">
+                      <div class="left">
+                          <ul class="left-hide-on-med-and-down">
+                              <li data-activates="slide-out" class="button-collapse"><a href=""><i id="id_slide_out" class="fa fa-bars" aria-hidden="true"></i></a></li>
+
+                          </ul>
+                      </div>
+                        <!--<ul class="left-hide-on-med-and-down right">²
+
+                              <li id="li_nav"><a href="#">Acceuil</a></li>
+                              <li class="li_nav active" id="li_nav"><a href="#">Contacts</a></li>
+                              <li id="li_nav"><a href="#">Quoi de neuf?</a></li>
+                        </ul>-->
+                      <div class="brand-logo center"><a href="#">{{request.user.username}}</a></div>
+                        <form action="" class="right">
+                              <div class="input-field">
+                                    <input type="search" required>
+                                    <label for=""><i class="fa fa-search" id="i_search"></i></label>
+                                    <!--<i id="close_search" class="fa fa-times fa-3x"></i>-->
+                              </div>
+                        </form>
+
+                  </div>
+            </nav>
+      </div>
+      <div class="slide_menu" style="color:#004d40">
+
+          <ul id="slide-out" class="collection side-nav">
+          <li class="collection-item avatar" id="li_avatar">
+              {% block pp %}<img id="img_avatar" src="{% static '/images/Photos de profils/default-avatar.jpg' %}" class="materialboxed circle" />{% endblock %}
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="absolute" id="status">
+                    {{user.email}} <br>
+                    <div class="divider"></div>
+                    <p class="truncate">{% block statut %}Aucun statut{% endblock %}</p>
+
+                </div>
+
+          </li>
+            <div class="menu">
+
+            </div>
+           <li class="no-padding menu_side" id="li_slide">
+              <ul class="collapsible collapsible-accordion">
+                <li class="bold"><a href="#" class="waves-effect waves-green collapsible-header active" >Acceuil<i style="color:green" id="i_menu_side" class="fa fa-home left"></i></a>
+                <div class="collapsible-body">
+            <ul data-collapsible="accordion">
+
+              </ul>
+                    </div>
+          </li>
+            </ul>
+          </li>
+
+              <li class="no-padding menu_side" id="li_slide">
+              <ul class="collapsible collapsible-accordion">
+                <li class="bold"><a href="#" class="waves-effect waves-orange collapsible-header" >Profil<i style="color:#4e342e " id="i_menu_side" class="fa fa-user-circle left"></i></a>
+                <div class="collapsible-body">
+            <ul data-collapsible="accordion">
+
+              </ul>
+                    </div>
+          </li>
+            </ul>
+          </li>
+
+          <li class="no-padding menu_side" id="li_slide">
+              <ul class="collapsible collapsible-accordion">
+                <li class="bold"><a href="#" class="waves-effect waves-purple collapsible-header" >Contacts<i style="color:blue" id="i_menu_side" class="fa fa-users left"></i></a>
+                <div class="collapsible-body">
+            <ul data-collapsible="accordion">
+          <li><a href="#">Liste</a></li>
+          <li><a href="#">Ajouter</a></li>
+          <li><a href="#">Modifier</a></li>
+          <li><a href="#">Supprimer</a></li>
+              </ul>
+                    </div>
+          </li>
+
+      </ul>
+
+            </li>
+
+          <li class="no-padding menu_side" id="li_slide">
+              <ul class="collapsible collapsible-accordion">
+                <li class="bold"><a href="#" class="waves-effect waves-orange collapsible-header" >Nous contacter<i style="color:#e53935 " id="i_menu_side" class="fa fa-send left"></i></a>
+                <div class="collapsible-body">
+            <ul data-collapsible="accordion">
+
+              </ul>
+                    </div>
+          </li>
+            </ul>
+          </li>
+
+              <li class="no-padding menu_side" id="li_slide">
+              <ul class="collapsible collapsible-accordion">
+                <li class="bold"><a href="#" class="waves-effect waves-orange collapsible-header" >Paramètres<i style="color:#64dd17 " id="i_menu_side" class="fa fa-gear"></i></a>
+                <div class="collapsible-body">
+            <ul data-collapsible="accordion">
+
+              </ul>
+                    </div>
+          </li>
+            </ul>
+          </li>
+
+          <li class="no-padding menu_side" id="li_slide">
+              <ul class="collapsible collapsible-accordion">
+                <li class="bold"><a href="#" class="waves-effect waves-yellow collapsible-header" >A propos<i style="color:red" id="i_menu_side" class="fa fa-question-circle left"></i></a>
+                <div class="collapsible-body">
+            <ul data-collapsible="accordion">
+
+              </ul>
+                    </div>
+          </li>
+            </ul>
+          </li>
+
+          <li class="no-padding menu_side" id="li_slide">
+              <ul class="collapsible collapsible-accordion">
+                <li class="bold"><a href="#" class="waves-effect waves-red collapsible-header" >Partager<i style="color:indigo" id="i_menu_side" class="fa fa-share-alt left"></i></a>
+                <div class="collapsible-body">
+            <ul data-collapsible="accordion">
+
+              </ul>
+                    </div>
+          </li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+<center>
+     <br><br><br>
+      <!--<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+<span class="sr-only">Loading...</span>
+<i class="mdi-action-search">Star</i>
+-->
+</center>
+<center>
+            {% block content %}{% endblock %}
+</center>
+
+
+      </body>
+</html>

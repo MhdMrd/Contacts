@@ -1,0 +1,227 @@
+#body{
+    background-image: url("images/Wallpapers/free-hd-wallpaper-download.jpg");
+    background-attachment: fixed;
+}
+
+#i_search, #i_search:focus{
+	font-size: 20px;
+}
+
+#li_slide .active{
+	background-color: #90caf9;
+}
+
+#li_slide:hover{
+ 	border-right: 3px $blue solid;
+ }
+
+.no-padding .active{
+ 	background-color: purple darken-2;
+ 	border-left: 3px blue solid;
+ 	.jpg
+ }
+
+ #box{
+  opacity: 50%
+ }
+
+ #id_slide_out{
+ 	font-size: 20px;
+ }
+
+ #li_avatar{
+ 	height: 350px;
+ 	
+ }
+
+div.absolute {
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    width: 97%;
+    height: 65px;
+    /*border: 3px solid #73AD21;*/
+    text-align: center;   
+    color: brown;
+}
+
+.image{
+  position: absolute;
+    bottom: 0px;
+    right: 0px;
+    left: 100px;
+    width: 100%;
+    height: 65px;
+    /*border: 3px solid #73AD21;*/
+    text-align: center;   
+    color: brown;
+}
+
+.truncate{
+  width: 277px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+
+/*#status{
+  position: absolute;
+  padding-top: 35px;
+  margin-right: 10px;
+  text-indent: true;
+  width: 100%;
+  background-color: black;
+
+}*/
+
+#img_avatar_details{
+  position: center;
+  height: 60px;
+  width: 20%;
+}
+
+ #img_avatar{
+ 	position: center;
+ 	height: 270px;
+ 	width: 90%;
+ }
+
+ #i_menu_side{
+ 	font-size: 20px;
+ 	/*color: #004d40 ;*/
+ }
+
+.waves-effect.waves-black .waves-ripple {
+	background-color: rgba(25,64,54,13);
+}
+
+.slide_menu{
+	background-color: #004d40 ;
+}
+
+#close_search{
+	font-size: 27px;
+}
+
+#icone_en_tete{
+	padding-top: 40px;
+	color: #263238;
+}
+
+#inputs{
+	margin: 30px;
+	margin-right: 40px;
+
+}
+
+#ajouter{
+	padding-top: 20px;
+	color: blue;
+	
+}
+
+#ajouter_login{
+  position: absolute;
+    bottom: 0px;
+    right: 0;
+    width: 97%;
+    height: 65px;
+    /*border: 3px solid #73AD21;*/
+    text-align: center;   
+    color: brown;
+}
+
+#container{
+	opacity: 1;
+	width: 70%
+	
+
+}
+
+.text{
+	border-color: green;
+  	padding-top: 40px;
+	padding-bottom: 30px;
+}
+
+#card{
+	width: 700px;
+}
+
+
+#icone_en_tete_mdi{
+	padding-top: 40px;
+	color: #263238;
+	font-size: 100px;
+}
+.lignes_table_liste:hover{
+  background-color: green;
+  color:#f9fbe7;
+}
+
+
+.a_liste{
+  color: black;
+}
+
+.a_liste:hover{
+  color: white;
+}
+
+.table_liste{
+  width: 70%;
+   background-color: None;
+}
+
+.table_details{
+  margin-left: 25%;
+  margin-top: 5%;
+  margin-right: 30%;
+  width: 50%;
+}
+
+.boutons{
+  margin: 30px;
+}
+
+.btn-option{
+  background-color: #b2ebf2;
+  margin: 10px;
+}
+
+#tr_details:hover{
+  background-color: #cfd8dc;
+}
+
+.details{
+  margin-right: 800px;
+}
+
+
+/* label color */
+   .input-field label {
+     color: blue;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: green;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid blue	;
+     box-shadow: 0 1px 0 0 indigo;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid green;
+     box-shadow: 0 1px 0 0 green;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid red;
+     box-shadow: 0 1px 0 0 red;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: blue;
+   }

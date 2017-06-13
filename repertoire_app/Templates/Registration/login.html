@@ -1,0 +1,55 @@
+{% extends 'main_template.html' %}
+
+{% block title %}Log in {% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+<div class="container" id="container">
+    <div class="row">
+        <div class="card-panel col s6 offset-s3 login" id="box">
+            <i class="fa fa-sign-in fa-5x" id="icone_en_tete_mdi"></i>
+
+
+            <form method="POST" action="" class="text center">{% csrf_token %}
+
+
+                <div class="row" id="inputs">
+                <div class="input-field">
+                <i class="fa fa-user-circle prefix"></i>
+
+                <label for="{{form.username.auto_id}}">Pseudo</label>
+                    <input id="{{form.username.auto_id}}" name="username" type="text" class="validate" required/>
+                </div>
+                </div>
+
+
+
+
+                <div class="row" id="inputs">
+                <div class="input-field">
+                <i class="fa fa-key prefix"></i>
+
+                <label for="{{form.password.auto_id}}">Mot de passe</label>
+                    <input id="{{form.password.auto_id}}" type=password class="validate" name="password" required/>
+                </div>
+                <input type="hidden" name="next" value="/contacts/list/" />
+
+
+                <div class="row" id="ajouter" style="padding-top:60px">
+                    <button  type="submit" class="btn-flat">
+                        <a href="">
+                            <i  class="fa fa-sign-in right"></i>Log in
+                        </a>
+
+                    </button>
+                </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}
